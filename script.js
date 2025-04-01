@@ -8,7 +8,7 @@ const songs = [
   {
     title: "Despacito",
     artist: "Luis Fonsi",
-    src: "songs/despacito.mp3",
+    src: "songs/Despacito.mp3",
     cover: "covers/Despacito.jpg",
   },
   {
@@ -50,7 +50,7 @@ const progressContainer = document.getElementById("progress_container");
 const progress = document.getElementById("progress");
 
 // Reset the progress bar when a new song is loaded
-function loadSong(index) {
+function loadSong(index, autoplay = false) {
   const song = songs[index];
   audio.src = song.src;
   titleElem.textContent = song.title;
@@ -64,6 +64,12 @@ function loadSong(index) {
 
   // Update the select dropdown value to reflect the current song
   songSelect.value = index;
+
+  // Autoplay if requested
+  if (autoplay) {
+    audio.play();
+    playBtn.textContent = "⏸"; // Update button to pause icon when playing
+  }
 }
 
 // Function to handle the play/pause toggle
@@ -80,18 +86,18 @@ function togglePlay() {
 // Functions for previous and next song
 function prevSong() {
   currentSongIndex = (currentSongIndex - 1 + songs.length) % songs.length;
-  loadSong(currentSongIndex); // Reset progress when changing song
+  loadSong(currentSongIndex, true); // Auto play when switching songs
 }
 
 function nextSong() {
   currentSongIndex = (currentSongIndex + 1) % songs.length;
-  loadSong(currentSongIndex); // Reset progress when changing song
+  loadSong(currentSongIndex, true); // Auto play when switching songs
 }
 
 // Update song selection from dropdown
 songSelect.addEventListener("change", (event) => {
   currentSongIndex = parseInt(event.target.value);
-  loadSong(currentSongIndex); // Don't play automatically
+  loadSong(currentSongIndex); // Don't play automatically when selecting from dropdown
 });
 
 // Update progress bar as the song plays
@@ -111,6 +117,12 @@ progressContainer.addEventListener("click", (e) => {
   audio.currentTime = (clickX / width) * duration;
 });
 
+// When a song ends, automatically play the next song
+audio.addEventListener("ended", () => {
+  nextSong(); // Move to the next song and play it
+});
+
+// Adding event listeners for buttons
 playBtn.addEventListener("click", togglePlay);
 prevBtn.addEventListener("click", prevSong);
 nextBtn.addEventListener("click", nextSong);
