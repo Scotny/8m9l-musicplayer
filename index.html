@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section>
+      <h1>Music App</h1>
+      <div id="cover"></div>
+      <ul>
+        <li id="title">Shape of You</li>
+        <li id="author">Ed Sheeran</li>
+      </ul>
+      <select id="songs_select">
+        <option value="0">Shape of You - Ed Sheeran</option>
+        <option value="1">Despacito - Luis Fonsi</option>
+        <option value="2">Uptown Funk - Mark Ronson</option>
+        <option value="3">Believer - Imagine Dragons</option>
+        <option value="4">Dance Monkey - Tones and I</option>
+        <option value="5">Barbie Girl - Aqua</option>
+      </select>
+      <div id="progress_container">
+        <div id="progress"></div>
+      </div>
+      <div id="controls">
+        <button id="prev">⏮</button>
+        <button id="play">▶</button>
+        <button id="next">⏭</button>
+      </div>
+      <audio id="audio" src="songs/Shape of You.mp3"></audio>
+    </section>
+    <script src="./script.js"></script>
+  </body>
+</html>
