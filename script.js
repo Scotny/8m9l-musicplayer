@@ -2,7 +2,7 @@ const songs = [
   {
     title: "Shape of You",
     artist: "Ed Sheeran",
-    src: "songs/shape of you.mp3",
+    src: "songs/Shape of You.mp3",
     cover: "covers/Shape_of_You.jpg",
   },
   {
@@ -20,19 +20,19 @@ const songs = [
   {
     title: "Believer",
     artist: "Imagine Dragons",
-    src: "songs/believer.mp3",
+    src: "songs/Believer.mp3",
     cover: "covers/Believer.jpg",
   },
   {
     title: "Dance Monkey",
     artist: "Tones and I",
-    src: "songs/dance monkey.mp3",
+    src: "songs/Dance Monkey.mp3",
     cover: "covers/Dance_Monkey.jpg",
   },
   {
     title: "Barbie Girl",
     artist: "Aqua",
-    src: "songs/barbie girl.mp3",
+    src: "songs/Barbie Girl.mp3",
     cover: "covers/Barbie_Girl.jpg",
   },
 ];
