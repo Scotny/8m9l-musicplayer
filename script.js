@@ -14,7 +14,7 @@ const songs = [
   {
     title: "Uptown Funk",
     artist: "Mark Ronson ft. Bruno Mars",
-    src: "songs/uptown funk.mp3",
+    src: "songs/Uptown Funk.mp3",
     cover: "covers/Uptown_Funk.jpg",
   },
   {
